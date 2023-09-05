@@ -1,0 +1,29 @@
+name: Build and Push Docker Images
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Build and push Django image
+      uses: docker/build-push-action@v2
+      with:
+        context: ./bookapi
+        file: ./bookapi/Dockerfile
+        push: true
+        tags: hilyas/bookapi:latest
+
+    - name: Build and push React image
+      uses: docker/build-push-action@v2
+      with:
+        context: ./bookfrontend
+        file: ./bookfrontend/Dockerfile
+        push: true
+        tags: hilyas/bookfrontend:latest
