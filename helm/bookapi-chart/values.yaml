@@ -5,10 +5,10 @@
 replicaCount: 1
 
 image:
-  repository: https://ghcr.io/hilyas/bookapi
+  repository: ghcr.io/hilyas/bookapi
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "latest"
+  tag: ""
 
 imagePullSecrets: []
 nameOverride: ""
