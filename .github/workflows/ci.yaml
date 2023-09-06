@@ -22,8 +22,8 @@ jobs:
     - name: Build and push Django image
       uses: docker/build-push-action@v2
       with:
-        context: ./books
-        file: ./books/Dockerfile
+        context: ./apps/books
+        file: ./apps/books/Dockerfile
         push: true
         tags: ghcr.io/hilyas/books:latest
 
