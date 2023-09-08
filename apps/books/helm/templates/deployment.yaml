@@ -40,7 +40,7 @@ spec:
           livenessProbe:
             httpGet:
               path: /
-              port: http
+              port: {{ .Values.livenessProbe.httpGet.port }}
           readinessProbe:
             httpGet:
               path: /

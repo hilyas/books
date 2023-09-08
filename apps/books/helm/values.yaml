@@ -39,7 +39,16 @@ securityContext: {}
 
 service:
   type: ClusterIP
-  port: 80
+  port: 8000
+
+livenessProbe:
+  httpGet:
+    path: /healthz
+    port: 8000
+  initialDelaySeconds: 15
+  periodSeconds: 20
+  timeoutSeconds: 5
+  failureThreshold: 3
 
 ingress:
   enabled: false
