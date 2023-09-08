@@ -1,0 +1,20 @@
+project: default
+source:
+  repoURL: "https://github.com/hilyas/books.git"
+  path: helm/books
+  targetRevision: HEAD
+  helm:
+    valueFiles:
+      - values.dev.yaml
+destination:
+  server: "https://kubernetes.default.svc"
+  namespace: books
+syncPolicy:
+  syncOptions:
+    - CreateNamespace=true
+  retry:
+    limit: 2
+    backoff:
+      duration: 5s
+      factor: 2
+      maxDuration: 3m0s
