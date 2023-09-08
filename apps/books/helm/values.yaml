@@ -42,13 +42,12 @@ service:
   port: 8000
 
 livenessProbe:
-  httpGet:
-    path: /healthz
-    port: 8000
-  initialDelaySeconds: 15
-  periodSeconds: 20
-  timeoutSeconds: 5
-  failureThreshold: 3
+  path: /healthz
+  port: 8000
+
+readinessProbe:
+  path: /healthz
+  port: 8000
 
 ingress:
   enabled: false
