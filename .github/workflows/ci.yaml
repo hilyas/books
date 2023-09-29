@@ -27,10 +27,3 @@ jobs:
         push: true
         tags: ghcr.io/hilyas/books:latest
     
-    # - name: Build and push sis image
-    #   uses: docker/build-push-action@v2
-    #   with:
-    #     context: ./apps/sis
-    #     file: ./apps/sis/Dockerfile
-    #     push: true
-    #     tags: ghcr.io/hilyas/sis:latest
